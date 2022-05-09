@@ -1,0 +1,210 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/CreateScene/Roll.gd" type="Script" id=1]
+[ext_resource path="res://scripts/CreateScene/Effects.gd" type="Script" id=2]
+
+[node name="Roll" type="VBoxContainer"]
+margin_right = 1664.0
+margin_bottom = 276.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1664.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_top = 5.0
+margin_right = 39.0
+margin_bottom = 19.0
+text = "Value:"
+
+[node name="Value" type="LineEdit" parent="HBoxContainer"]
+margin_left = 43.0
+margin_right = 101.0
+margin_bottom = 24.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_top = 28.0
+margin_right = 1664.0
+margin_bottom = 126.0
+custom_constants/margin_left = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 50.0
+margin_right = 1664.0
+margin_bottom = 98.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 1614.0
+margin_bottom = 14.0
+text = "Pass"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 1614.0
+margin_bottom = 98.0
+custom_constants/margin_left = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_right = 1614.0
+margin_bottom = 80.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 1594.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 78.0
+margin_bottom = 19.0
+text = "Description:"
+
+[node name="Desc_pass" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 82.0
+margin_right = 1594.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Effects" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 1594.0
+margin_bottom = 52.0
+script = ExtResource( 2 )
+
+[node name="EffectsButton" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Effects"]
+margin_right = 1594.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Effects/EffectsButton"]
+margin_top = 3.0
+margin_right = 50.0
+margin_bottom = 17.0
+text = "Effects: "
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Effects/EffectsButton"]
+margin_left = 54.0
+margin_right = 130.0
+margin_bottom = 20.0
+text = "Add Effect"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Effects"]
+margin_top = 24.0
+margin_right = 1594.0
+margin_bottom = 24.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Effects/MarginContainer"]
+margin_right = 1594.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 1594.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 5.0
+margin_right = 72.0
+margin_bottom = 19.0
+text = "Next Node:"
+
+[node name="Next_Pass" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 76.0
+margin_right = 134.0
+margin_bottom = 24.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+margin_top = 130.0
+margin_right = 1664.0
+margin_bottom = 228.0
+custom_constants/margin_left = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+margin_left = 50.0
+margin_right = 1664.0
+margin_bottom = 98.0
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer"]
+margin_right = 1614.0
+margin_bottom = 14.0
+text = "Fail"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/VBoxContainer"]
+margin_top = 18.0
+margin_right = 1614.0
+margin_bottom = 98.0
+custom_constants/margin_left = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_right = 1614.0
+margin_bottom = 80.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 1594.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 78.0
+margin_bottom = 19.0
+text = "Description:"
+
+[node name="Desc_Fail" type="LineEdit" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 82.0
+margin_right = 1594.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Effects" type="VBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 1594.0
+margin_bottom = 52.0
+script = ExtResource( 2 )
+
+[node name="EffectsButton" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Effects"]
+margin_right = 1594.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Effects/EffectsButton"]
+margin_top = 3.0
+margin_right = 50.0
+margin_bottom = 17.0
+text = "Effects: "
+
+[node name="Button" type="Button" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Effects/EffectsButton"]
+margin_left = 54.0
+margin_right = 130.0
+margin_bottom = 20.0
+text = "Add Effect"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Effects"]
+margin_top = 24.0
+margin_right = 1594.0
+margin_bottom = 24.0
+custom_constants/margin_left = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Effects/MarginContainer"]
+margin_left = 20.0
+margin_right = 1594.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 1594.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 5.0
+margin_right = 72.0
+margin_bottom = 19.0
+text = "Next Node:"
+
+[node name="Next_Fail" type="LineEdit" parent="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 76.0
+margin_right = 134.0
+margin_bottom = 24.0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Effects/EffectsButton/Button" to="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Effects" method="_on_Button_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Effects/EffectsButton/Button" to="MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer/Effects" method="_on_Button_pressed"]

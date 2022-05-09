@@ -1,0 +1,89 @@
+{
+    "End Test":[
+        {
+            "id":1, 
+            "type":"text",
+            "text":"START",
+            "effects":[{"type":"rel", "person": "Team", "value": 0}, {"type":"inv", "item":"magic item", "action":"store"}],
+            "next":2,
+            "images":"",
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]            
+        },
+        {
+            "id":2,
+            "type":"choice",
+            "text":"Choices",
+            "choices":[
+                {
+                    "choice":"Choice # 1",
+                    "desc":"choice # 1",
+                    "effects":[],
+                    "next":3
+                },
+                {
+                    "choice":"Choice # 2",
+                    "desc":"choice # 2",
+                    "effects":[],
+                    "next":3
+                }
+            ],
+            "images":"",
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "id":3,
+            "type":"input",
+            "text":"input. type keyword <next>",
+            "words":[
+                {
+                    "keyword":"next",
+                    "desc":"typed next",
+                    "effects":[],
+                    "next":4
+                }
+            ],
+            "images":"",
+            "sounds":[
+                {
+                    "bgm":null,
+                    "sfx":null,
+                    "voice":null
+                }
+            ]
+        },
+        {
+            "id":4,
+            "type":"roll",
+            "text":"roll. get 10 or greater to win",
+            "data":{
+                "value":10,
+                "desc_pass":"win",
+                "desc_fail":"lose",
+                "effects_pass":[],
+                "effects_fail":[],
+                "next_pass":"end",
+                "next_fail":"end"
+            },
+            "images":"",
+            "sounds":[
+                {
+                    "bgm":null,
+                    "sfx":null,
+                    "voice":null
+                }
+            ]
+        }
+    ]
+}

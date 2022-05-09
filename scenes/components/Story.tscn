@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/MainMenuScene/Story.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/brown_gradient.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/CubaoFree2-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_top = 10
+extra_spacing_bottom = 5
+font_data = SubResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 1, 0.0627451, 0.941176, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0, 0.517647, 0.262745, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0, 0.517647, 0.262745, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1000, 750 )
+expand_margin_top = 30.0
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/Fredoka-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 3 )
+
+[sub_resource type="Theme" id=15]
+default_font = SubResource( 4 )
+Button/colors/font_color = Color( 0.223529, 1, 0.0784314, 1 )
+Button/colors/font_color_hover = Color( 1, 0.0627451, 0.941176, 1 )
+Button/colors/font_color_pressed = Color( 0, 0.517647, 0.262745, 1 )
+Button/fonts/font = SubResource( 8 )
+Button/styles/hover = SubResource( 9 )
+Button/styles/normal = SubResource( 11 )
+Button/styles/pressed = SubResource( 10 )
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 0
+MarginContainer/constants/margin_right = 0
+MarginContainer/constants/margin_top = 0
+PanelContainer/styles/panel = SubResource( 5 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/constants/close_h_ofs = 30
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/fonts/CubaoFree2-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_top = 5
+font_data = SubResource( 13 )
+
+[node name="Story" type="PanelContainer"]
+margin_right = 726.0
+margin_bottom = 34.0
+theme = SubResource( 15 )
+script = ExtResource( 1 )
+
+[node name="Margin" type="MarginContainer" parent="."]
+margin_right = 726.0
+margin_bottom = 56.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 5
+
+[node name="Organizer" type="HBoxContainer" parent="Margin"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 706.0
+margin_bottom = 51.0
+
+[node name="Title" type="Label" parent="Margin/Organizer"]
+margin_top = 5.0
+margin_right = 219.0
+margin_bottom = 41.0
+size_flags_horizontal = 2
+custom_fonts/font = SubResource( 14 )
+text = "Story Title"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Margin/Organizer"]
+margin_left = 598.0
+margin_right = 686.0
+margin_bottom = 46.0
+text = "PLAY"

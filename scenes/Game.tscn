@@ -1,0 +1,238 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scripts/GameScene/Game.gd" type="Script" id=1]
+[ext_resource path="res://scripts/GameScene/StoryBoxes.gd" type="Script" id=2]
+[ext_resource path="res://scripts/GameScene/EffectPrompts.gd" type="Script" id=3]
+[ext_resource path="res://assets/icons/twotone_description_white_36dp.png" type="Texture" id=5]
+[ext_resource path="res://assets/icons/baseline_forum_white_36dp.png" type="Texture" id=6]
+[ext_resource path="res://assets/icons/baseline_group_white_36dp.png" type="Texture" id=7]
+[ext_resource path="res://assets/icons/twotone_forum_white_36dp.png" type="Texture" id=8]
+[ext_resource path="res://assets/icons/baseline_backpack_white_36dp.png" type="Texture" id=9]
+[ext_resource path="res://assets/icons/baseline_description_white_36dp.png" type="Texture" id=10]
+[ext_resource path="res://assets/icons/twotone_group_white_36dp.png" type="Texture" id=11]
+[ext_resource path="res://assets/icons/twotone_backpack_white_36dp.png" type="Texture" id=12]
+[ext_resource path="res://scripts/GameScene/Inventory.gd" type="Script" id=13]
+[ext_resource path="res://scripts/GameScene/Relationships.gd" type="Script" id=14]
+[ext_resource path="res://scripts/GameScene/PrevStoryBoxes.gd" type="Script" id=15]
+[ext_resource path="res://assets/themes/orange_theme_game.tres" type="Theme" id=16]
+[ext_resource path="res://assets/images/jeepney_pixelatedv2.png" type="Texture" id=17]
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 16 )
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.138638
+margin_top = 0.624755
+margin_right = -0.138672
+margin_bottom = 0.624878
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 7
+
+[node name="Menu" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -600.0
+margin_right = 600.0
+margin_bottom = 75.0
+
+[node name="Icons" type="HBoxContainer" parent="Menu"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1195.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory" type="TextureButton" parent="Menu/Icons"]
+margin_right = 294.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 3
+
+[node name="Relationships" type="TextureButton" parent="Menu/Icons"]
+margin_left = 298.0
+margin_right = 593.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 11 )
+expand = true
+stretch_mode = 3
+
+[node name="Notes" type="TextureButton" parent="Menu/Icons"]
+margin_left = 597.0
+margin_right = 891.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="Prev" type="TextureButton" parent="Menu/Icons"]
+margin_left = 895.0
+margin_right = 1190.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 8 )
+expand = true
+stretch_mode = 3
+
+[node name="Inventory" type="WindowDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1432.65
+margin_top = 200.464
+margin_right = -37.3542
+margin_bottom = -179.536
+rect_min_size = Vector2( 300, 700 )
+window_title = "Inventory"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+
+[node name="ItemBoxes" type="VBoxContainer" parent="Inventory/ScrollContainer"]
+margin_right = 349.996
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Relationships" type="WindowDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1346.65
+margin_top = 200.464
+margin_right = -23.35
+margin_bottom = -179.536
+rect_min_size = Vector2( 300, 700 )
+window_title = "Relationships"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Relationships"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+
+[node name="RelationshipBoxes" type="VBoxContainer" parent="Relationships/ScrollContainer"]
+margin_right = 450.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Notes" type="WindowDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1432.65
+margin_top = 200.464
+margin_right = -37.3542
+margin_bottom = -179.536
+rect_min_size = Vector2( 300, 700 )
+window_title = "Notes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Notes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Type Here"
+highlight_current_line = true
+show_line_numbers = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrevStoryBoxes" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -700.0
+margin_top = -350.0
+margin_right = 700.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 1400, 700 )
+window_title = "StoryBoxes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PrevStoryBoxes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoryBoxes" type="VBoxContainer" parent="PrevStoryBoxes/ScrollContainer"]
+margin_right = 1340.0
+margin_bottom = 640.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 15 )
+
+[node name="StoryBoxes" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -100.0
+margin_right = 350.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 700, 200 )
+script = ExtResource( 2 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="StoryBoxes"]
+
+[node name="SFX" type="AudioStreamPlayer" parent="StoryBoxes"]
+
+[node name="Voice" type="AudioStreamPlayer" parent="StoryBoxes"]
+
+[node name="Tween" type="Tween" parent="StoryBoxes"]
+
+[node name="EffectPrompts" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 50.0
+margin_right = 325.0
+margin_bottom = -50.0
+rect_min_size = Vector2( 300, 0 )
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="EffectPrompts"]

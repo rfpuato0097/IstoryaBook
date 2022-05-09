@@ -1,0 +1,229 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/images/jeepney_pixelatedv2.png" type="Texture" id=1]
+[ext_resource path="res://assets/themes/orange_theme_end.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/CreateScene/PopupPanel.gd" type="Script" id=3]
+[ext_resource path="res://scripts/CreateScene/Create.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/fonts/Quiapo_Free.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 175
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = SubResource( 1 )
+
+[node name="Create" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VboxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+
+[node name="Button" type="Button" parent="VboxContainer"]
+margin_left = 1637.0
+margin_right = 1820.0
+margin_bottom = 50.0
+size_flags_horizontal = 8
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="VboxContainer"]
+margin_top = 54.0
+margin_right = 1820.0
+margin_bottom = 229.0
+custom_fonts/font = SubResource( 2 )
+text = "Create Story"
+align = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VboxContainer"]
+margin_top = 233.0
+margin_right = 1820.0
+margin_bottom = 980.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VboxContainer/PanelContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1810.0
+margin_bottom = 737.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VboxContainer/PanelContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1780.0
+margin_bottom = 707.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer"]
+margin_right = 1760.0
+margin_bottom = 687.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="CenterContainer" type="CenterContainer" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_right = 1760.0
+margin_bottom = 51.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CenterContainer"]
+margin_left = 573.0
+margin_right = 1186.0
+margin_bottom = 51.0
+
+[node name="Label" type="Label" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 109.0
+margin_bottom = 51.0
+size_flags_horizontal = 5
+size_flags_vertical = 0
+text = "Title: "
+
+[node name="Title" type="LineEdit" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 113.0
+margin_right = 613.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="StoryBoxes" type="VBoxContainer" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 71.0
+margin_right = 1760.0
+margin_bottom = 71.0
+
+[node name="ButtonArray" type="HBoxContainer" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 91.0
+margin_right = 1760.0
+margin_bottom = 141.0
+
+[node name="Text" type="Button" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ButtonArray"]
+margin_left = 135.0
+margin_right = 301.0
+margin_bottom = 50.0
+size_flags_horizontal = 6
+text = "ADD TEXT"
+
+[node name="Choice" type="Button" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ButtonArray"]
+margin_left = 559.0
+margin_right = 760.0
+margin_bottom = 50.0
+size_flags_horizontal = 6
+text = "ADD CHOICE"
+
+[node name="Input" type="Button" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ButtonArray"]
+margin_left = 1011.0
+margin_right = 1190.0
+margin_bottom = 50.0
+size_flags_horizontal = 6
+text = "ADD INPUT"
+
+[node name="Roll" type="Button" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ButtonArray"]
+margin_left = 1458.0
+margin_right = 1624.0
+margin_bottom = 50.0
+size_flags_horizontal = 6
+text = "ADD ROLL"
+
+[node name="Button" type="Button" parent="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 161.0
+margin_right = 1760.0
+margin_bottom = 211.0
+text = "CREATE STORY"
+
+[node name="PopupPanel" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -600.0
+margin_top = -400.0
+margin_right = 600.0
+margin_bottom = 400.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_constants/margin_right = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/MarginContainer"]
+margin_left = 30.0
+margin_right = 1162.0
+margin_bottom = 762.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer"]
+margin_right = 1132.0
+margin_bottom = 51.0
+text = "Title"
+align = 1
+
+[node name="TextEdit" type="TextEdit" parent="PopupPanel/MarginContainer/VBoxContainer"]
+margin_top = 71.0
+margin_right = 1132.0
+margin_bottom = 692.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer"]
+margin_top = 712.0
+margin_right = 1132.0
+margin_bottom = 762.0
+
+[node name="Copy" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 236.0
+margin_right = 328.0
+margin_bottom = 50.0
+size_flags_horizontal = 6
+text = "Copy"
+
+[node name="Continue" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 764.0
+margin_right = 935.0
+margin_bottom = 50.0
+size_flags_horizontal = 6
+text = "Continue"
+
+[connection signal="pressed" from="VboxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="text_changed" from="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CenterContainer/HBoxContainer/Title" to="." method="_on_Title_text_changed"]
+[connection signal="pressed" from="VboxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Button" to="." method="create_story"]
+[connection signal="pressed" from="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/Copy" to="PopupPanel" method="_on_Copy_pressed"]
+[connection signal="pressed" from="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/Continue" to="PopupPanel" method="_on_Continue_pressed"]

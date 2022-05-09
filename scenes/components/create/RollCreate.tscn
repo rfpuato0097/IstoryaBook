@@ -1,0 +1,190 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/CreateScene/Roll.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/CreateScene/RollCreate.gd" type="Script" id=2]
+[ext_resource path="res://scripts/CreateScene/Rolls.gd" type="Script" id=3]
+
+[node name="RollCreate" type="PanelContainer"]
+margin_right = 1768.0
+margin_bottom = 895.0
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1761.0
+margin_bottom = 888.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 1734.0
+margin_bottom = 871.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1714.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 35.0
+margin_bottom = 17.0
+text = "ID : 1"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 1595.0
+margin_right = 1714.0
+margin_bottom = 20.0
+size_flags_horizontal = 10
+text = "Delete Story Box"
+
+[node name="Text" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 1714.0
+margin_bottom = 114.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Text"]
+margin_right = 35.0
+margin_bottom = 14.0
+size_flags_vertical = 0
+text = "Text: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="TextEdit" parent="MarginContainer/VBoxContainer/Text"]
+margin_left = 39.0
+margin_right = 1714.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 90 )
+size_flags_horizontal = 3
+
+[node name="Rolls" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 118.0
+margin_right = 1714.0
+margin_bottom = 364.0
+script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Rolls"]
+margin_right = 1714.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Rolls/HBoxContainer"]
+margin_right = 61.0
+margin_bottom = 14.0
+text = "Roll Data:"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Rolls/HBoxContainer"]
+visible = false
+margin_left = 65.0
+margin_right = 130.0
+margin_bottom = 20.0
+text = "Add Roll"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Rolls"]
+margin_top = 18.0
+margin_right = 1714.0
+margin_bottom = 246.0
+custom_constants/margin_left = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Rolls/MarginContainer"]
+margin_left = 50.0
+margin_right = 1714.0
+margin_bottom = 228.0
+
+[node name="Roll" parent="MarginContainer/VBoxContainer/Rolls/MarginContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_bottom = 228.0
+
+[node name="Images" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 368.0
+margin_right = 1714.0
+margin_bottom = 392.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Images"]
+margin_top = 5.0
+margin_right = 48.0
+margin_bottom = 19.0
+text = "Image: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="LineEdit" parent="MarginContainer/VBoxContainer/Images"]
+margin_left = 52.0
+margin_right = 1714.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 396.0
+margin_right = 1714.0
+margin_bottom = 410.0
+text = "Sounds"
+
+[node name="Sounds" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 414.0
+margin_right = 1714.0
+margin_bottom = 494.0
+
+[node name="BGM" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Sounds"]
+margin_right = 1714.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Sounds/BGM"]
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "BGM: "
+
+[node name="BGM" type="LineEdit" parent="MarginContainer/VBoxContainer/Sounds/BGM"]
+margin_left = 159.0
+margin_right = 1714.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Sounds"]
+margin_top = 28.0
+margin_right = 1714.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Sounds/SFX"]
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "SFX:"
+
+[node name="SFX" type="LineEdit" parent="MarginContainer/VBoxContainer/Sounds/SFX"]
+margin_left = 159.0
+margin_right = 1714.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Voiceover" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Sounds"]
+margin_top = 56.0
+margin_right = 1714.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Sounds/Voiceover"]
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Voice-over:"
+
+[node name="Voice" type="LineEdit" parent="MarginContainer/VBoxContainer/Sounds/Voiceover"]
+margin_left = 159.0
+margin_right = 1714.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Rolls/HBoxContainer/Button" to="MarginContainer/VBoxContainer/Rolls" method="_on_Button_pressed"]

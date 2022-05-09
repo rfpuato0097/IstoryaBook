@@ -1,0 +1,437 @@
+{
+    "Story#2" : [
+        {
+            "text": "",
+            "type": "choice",
+            "choices":[
+                {
+                    "choice": "S T A R T",
+                    "desc": "",
+                    "effect": [{"type":"rel", "person": "Team", "value": -10}],
+                    "next": 2
+                }
+            ],
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "5 vs 5. Nalulugi na kayo. Naasar na kakampi mo. Nagiinit na yung keyboard nya.",
+            "type": "text",
+            "next": 3,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nagkaron ng laban. (Roll 14 or more to win.)",
+            "type": "roll",
+            "data": {
+                "value": 14,
+                "desc_pass": "Nanalo kayo sa unang laban",
+                "desc_fail": "Natalo kayo sa unang laban",
+                "next_pass": 4,
+                "next_fail": 9
+            },
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nagkaron ng laban. Naunahan mo sila kaya patas na ngayon ang laban",
+            "type": "choice",
+            "choices":[
+                {
+                    "choice": "\"nice one guys\"",
+                    "desc": "Sabi mo 'nice one guys'",
+                    "effect": [{"type":"rel", "person": "Team", "value": 15}],
+                    "next": 5
+                },
+                {
+                    "choice": "Tahimik ka lang",
+                    "desc": "Tahimik ka lang",
+                    "effect": [{"type":"rel", "person": "Team", "value": 0}],
+                    "next": 6
+                }
+            ],
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Sinabihan mo ng \"nice one guys\" ang team mo.",
+            "type": "text",
+            "next": 7,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Tahimik ka lang",
+            "type": "text",
+            "next": 7,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Kumalma konti yung mga kakampi mo.",
+            "type": "text",
+            "next": 8,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nagkaron ulit ng laban. Pero ngayon kayo naman ang nabulaga. Roll 18 and above to win.",
+            "type": "roll",
+            "data": {
+                "value": 18,
+                "desc_pass": "Nanalo ulit kayo sa laban",
+                "desc_fail": "Natalo kayo sa laban",
+                "next_pass": 4,
+                "next_fail": 9
+            },
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nagkaron ng laban. Naunahan nyo sila pero nagkamali ka kaya lalo kayong nalugi",
+            "type": "text",
+            "next": 10,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Sinisisi ka na ng isa mong kakampi. Ang lakas ng trashtalk.",
+            "type": "choice",
+            "choices":[
+                {
+                    "choice": "Sasagutin mo. 'Di ka magpapatalo.",
+                    "desc": "Sinagot mo yung kakampi mo.",
+                    "effect": [{"type":"rel", "person": "Team", "value": -10}],
+                    "next": 11
+                },
+                {
+                    "choice": "'Di mo nalang papansinin.",
+                    "desc": "'Di mo nalang pinansin yung kakampi mo.",
+                    "effect": [{"type":"rel", "person": "Team", "value": 0}],
+                    "next": 12
+                }
+            ],
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Sinagot mo yung kakampi mo. Hindi ka magpapatalo.",
+            "type": "text",
+            "next": 13,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "'Di mo nalang pinansin yung kakampi mo.",
+            "type": "text",
+            "next": 14,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Lalong nag-init yung kakampi mo. Hindi sya magpapatalo. Sinagot ka nya ulit.",
+            "type": "choice",
+            "choices":[
+                {
+                    "choice": "Hindi ka papayag ng ganito. Sagutin mo sya ulit.",
+                    "desc": "Sinagot mo ulit yung kakampi mo",
+                    "effect": [{"type":"rel", "person": "Team", "value": -10}],
+                    "next": 15
+                },
+                {
+                    "choice": "I-mute mo nalang sila.",
+                    "desc": "Minute mo nalang sila.",
+                    "effect": [{"type":"rel", "person": "Team", "value": 0}],
+                    "next": 16
+                }
+            ],
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Tinigilan ka na nya. Yung isang kakampi mo naman ang ginisa nya.",
+            "type": "choice",
+            "choices":[
+                {
+                    "choice": "Hindi ka papayag ng ganito. Sagutin mo sya ulit.",
+                    "desc": "Sinagot mo ulit yung kakampi mo",
+                    "effect": [{"type":"rel", "person": "Team", "value": -10}],
+                    "next": 15
+                },
+                {
+                    "choice": "I-mute mo nalang sila.",
+                    "desc": "Minute mo nalang sila.",
+                    "effect": [{"type":"rel", "person": "Team", "value": 0}],
+                    "next": 16
+                },
+                {
+                    "choice": "Ipagtanggol mo yung kakampi mo.",
+                    "desc": "Pinagtanggol mo yung kakampi mo.",
+                    "effect": [{"type":"rel", "person": "Team", "value": 5}],
+                    "next": 17
+                }
+            ],
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Hindi ka nagpatalo. Sinagot mo sya ulit.",
+            "type": "text",
+            "next": 18,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Minute mo nalang sila. Hindi mo na sila pinatulan.",
+            "type": "text",
+            "next": 19,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Pinagtanggol mo yung kakampi mo. Sinagot mo ulit sya.",
+            "type": "text",
+            "next": 20,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nagkasagutan ulit kayo. Nagkaroon ulit ng laban habang nag-aaway kayo. (Roll 19 or greater to WIN)",
+            "type": "roll",
+            "data": {
+                "value": 19,
+                "desc_pass": "Nanalo kayo??? Habang nag-aaway kayo. Wow. Swerte",
+                "desc_fail": "Habang nag-aaway kayo, nilabanan kayo kaya natalo",
+                "next_pass": 21,
+                "next_fail": 22
+            },
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Pokus ka nalang ulit sa laro. Magkakaroon ulit ng laban. (Roll 5 or greater to WIN)",
+            "type": "roll",
+            "data": {
+                "value": 5,
+                "desc_pass": "Muted na sila. Pokus ka lang sa laro. Nanalo kayo dahil sayo.",
+                "desc_fail": "Muted na sila. Pokus ka na. Talo pa rin. Patalo yung kakampi mo dahil sa sobrang katoxican",
+                "next_pass": 21,
+                "next_fail": 22
+            },
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nagkasagutan ulit kayo. Nagkaroon ng laban habang nag-aaway kayo. (Roll 17 or greater to WIN)",
+            "type": "roll",
+            "data": {
+                "value": 17,
+                "desc_pass": "Nanalo kayo??? Habang nag-aaway kayo. Wow. Swerte",
+                "desc_fail": "Habang nag-aaway kayo, nilabanan kayo kaya natalo",
+                "next_pass": 21,
+                "next_fail": 22
+            },
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nanalo kayo. Himala. Sa gulo ng laro na yun, nanalo pa kayo. Irereport mo yung mga toxic mong kakampi?",
+            "type": "choice",
+            "choices":[
+                {
+                    "choice": "Irereport mo sila",
+                    "desc": "Nireport mo sila",
+                    "effect": [],
+                    "next": 23
+                },
+                {
+                    "choice": "Di mo sila irereport",
+                    "desc": "Di mo sila nireport",
+                    "effect": [],
+                    "next": 24
+                }
+            ],
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Natalo kayo. Sa gulo ng laro na yun, hindi nakakagulat. Irereport mo ba yung mga toxic mong kakampi?",
+            "type": "choice",
+            "choices":[
+                {
+                    "choice": "Irereport mo sila",
+                    "desc": "Nireport mo sila",
+                    "effect": [],
+                    "next": 23
+                },
+                {
+                    "choice": "Di mo sila irereport",
+                    "desc": "Di mo sila nireport",
+                    "effect": [],
+                    "next": 24
+                }
+            ],
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Ni-report mo yung mga naging toxic.",
+            "type": "text",
+            "next": 25,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Hindi mo sila nireport",
+            "type": "text",
+            "next": 26,
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Nalaman mong na-ban sila. Panigurado sa mga sumunod na game nila ay naging toxic rin sila.",
+            "type": "text",
+            "next": "end",
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        },
+        {
+            "text": "Pinagpatuloy lang nila yung ginagawa nila sa ibang game. Mas marami pa silang nabiktima",
+            "type": "text",
+            "next": "end",
+            "sounds":[
+                {
+                    "bgm": null,
+                    "sfx": null,
+                    "voice": null
+                }
+            ]
+        }
+    ]
+}
