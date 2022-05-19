@@ -3,9 +3,6 @@
 [node name="RelationshipBox" type="PanelContainer"]
 margin_right = 350.0
 margin_bottom = 46.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 7.0
@@ -29,4 +26,4 @@ text = "Person Name"
 margin_top = 18.0
 margin_right = 316.0
 margin_bottom = 32.0
-text = "- RelationshipLevel"
+text = "> RelationshipLevel"

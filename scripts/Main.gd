@@ -8,6 +8,8 @@ var images = {}
 
 var end_game_stats = {"Events":[], "Choices":[], "Relationships":[], "Inventory":[]}
 
+var inventory = []
+
 signal updateStoryList
 
 func _ready():
@@ -39,5 +41,9 @@ func store_end_game_stats(category, value):
 	match category:
 		"Ending":
 			end_game_stats[category] = value
+		"Relationships":
+			end_game_stats["Relationships"] = value
+		"Inventory":
+			end_game_stats["Inventory"] = value
 		_:
 			end_game_stats[category].push_back(value)

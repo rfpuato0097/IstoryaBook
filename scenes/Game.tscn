@@ -34,6 +34,26 @@ texture = ExtResource( 17 )
 expand = true
 stretch_mode = 7
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="StoryBoxes" type="PanelContainer" parent="CenterContainer"]
+margin_left = 610.0
+margin_top = 440.0
+margin_right = 1310.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 700, 200 )
+script = ExtResource( 2 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="CenterContainer/StoryBoxes"]
+
+[node name="SFX" type="AudioStreamPlayer" parent="CenterContainer/StoryBoxes"]
+
+[node name="Voice" type="AudioStreamPlayer" parent="CenterContainer/StoryBoxes"]
+
+[node name="Tween" type="Tween" parent="CenterContainer/StoryBoxes"]
+
 [node name="Menu" type="PanelContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -205,26 +225,6 @@ margin_bottom = 640.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 15 )
-
-[node name="StoryBoxes" type="PanelContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -350.0
-margin_top = -100.0
-margin_right = 350.0
-margin_bottom = 122.0
-rect_min_size = Vector2( 700, 200 )
-script = ExtResource( 2 )
-
-[node name="BGM" type="AudioStreamPlayer" parent="StoryBoxes"]
-
-[node name="SFX" type="AudioStreamPlayer" parent="StoryBoxes"]
-
-[node name="Voice" type="AudioStreamPlayer" parent="StoryBoxes"]
-
-[node name="Tween" type="Tween" parent="StoryBoxes"]
 
 [node name="EffectPrompts" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0

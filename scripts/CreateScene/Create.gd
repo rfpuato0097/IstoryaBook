@@ -42,12 +42,12 @@ func _on_files_dropped(uploaded_files,screen):
 			file.close()
 		elif(extension == "mp3" or extension == "wav"):
 			if(on_focus is LineEdit):
-				on_focus.text = upload
+				on_focus.text = upload.get_file()
 			
 			audios.push_back(upload)
 		elif(extension == "png" or extension == "jpg" or extension == "jpeg"):
 			if(on_focus is LineEdit):
-				on_focus.text = upload
+				on_focus.text = upload.get_file()
 			
 			images.push_back(upload)
 	

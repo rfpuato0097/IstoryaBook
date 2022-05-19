@@ -24,7 +24,7 @@ func _ready():
 			"Inventory":
 				text_edit_node.text = text_edit_node.text + category + "\n"
 				for message in Main.end_game_stats[category]:
-					text_edit_node.text = text_edit_node.text + "\t" + message["item"] + "\n"
+					text_edit_node.text = text_edit_node.text + "\t" + message + "\n"
 
 
 func _on_ToggleScreen_toggled(button_pressed):

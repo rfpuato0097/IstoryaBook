@@ -17,9 +17,12 @@ func update_inventory(effect):
 		"use":
 			for item in self.get_children():
 				if(item.get_node("MarginContainer/VBoxContainer/ItemName").text == effect["item"]):
+					self.remove_child(item)
 					item.queue_free()
-			
-			inventory_list.erase(effect["item"])
+					inventory_list.erase(effect["item"])
+					break
+	
+	Main.inventory = inventory_list
 
 func return_inventory():
 	return inventory_list

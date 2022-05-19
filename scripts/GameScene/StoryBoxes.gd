@@ -20,12 +20,12 @@ var voice: AudioStream
 
 onready var tween_node = $Tween
 
-onready var inventory = get_node("../Inventory/ScrollContainer/ItemBoxes")
-onready var relationships = get_node("../Relationships/ScrollContainer/RelationshipBoxes")
-onready var notes = get_node("../Notes")
-onready var prevstoryboxes = get_node("../PrevStoryBoxes/ScrollContainer/StoryBoxes")
-onready var effectprompts = get_node("../EffectPrompts")
-onready var game = get_node("..")
+onready var inventory = get_node("../../Inventory/ScrollContainer/ItemBoxes")
+onready var relationships = get_node("../../Relationships/ScrollContainer/RelationshipBoxes")
+onready var notes = get_node("../../Notes")
+onready var prevstoryboxes = get_node("../../PrevStoryBoxes/ScrollContainer/StoryBoxes")
+onready var effectprompts = get_node("../../EffectPrompts")
+onready var game = get_node("../..")
 
 func _ready():
 	story = Main.stories[Main.selected_story]
@@ -73,7 +73,8 @@ func progressStory(storybox_index):
 						bgm_player.set_stream(bgm)
 						bgm_player.play()
 					else:
-						bgm_player.stop()
+						#bgm_player.stop()
+						pass
 				"sfx":
 					if(sound["sfx"] != null or sound["sfx"] != "" ):
 						#sfx = load(sound["sfx"])
@@ -173,7 +174,7 @@ func _roll(roll):
 	tween_node.start()
 	yield(tween_node, "tween_completed")
 
-	if( rand >= roll.data[0]["value"]):
+	if( rand >= int(roll.data[0]["value"])):
 		Main.store_end_game_stats("Events", roll.data[0]["desc_pass"])
 		yield(get_tree().create_timer(2.0), "timeout")
 		sendStoryBox(story_node)
@@ -188,13 +189,15 @@ func _roll(roll):
 
 func do_effects(effects):
 	for effect in effects:
+		print("Doing this Effect")
+		print(effect)
 		match(effect["type"]):
 			"inv":
 				#if(effect["action"] == "store"):
-				Main.store_end_game_stats("Inventory", effect)
+				#Main.store_end_game_stats("Inventory", effect)
 				inventory.update_inventory(effect)
 			"rel":
-				Main.store_end_game_stats("Relationships", effect)
+				#Main.store_end_game_stats("Relationships", effect)
 				relationships.update_relationships(effect)
 			_:
 				pass
@@ -211,4 +214,10 @@ func is_end(next):
 	if(int(next) == 0):
 		get_tree().change_scene("res://scenes/End.tscn")
 	else:
+		Main.store_end_game_stats("Relationships", relationships.read_relationships())
+		Main.store_end_game_stats("Inventory", inventory.return_inventory())
+		print("Main Inventory")
+		print(Main.inventory)
+		print(inventory.return_inventory())
+		
 		progressStory(int(next) - 1)

@@ -13,6 +13,8 @@ func _ready():
 	set_buttons()
 
 func set_buttons():
+	var inventory_list = Main.inventory.duplicate(true)
+	
 	for choice in choices:
 
 #		button = pre_button.instance()
@@ -22,20 +24,27 @@ func set_buttons():
 		buttons.add_child(button)
 
 		#Check Effect then Inventory
-		var found = []
-		var items = []
+		#var found = []
+		#var items = []
 		for effect in choice["effects"]:
 			if(effect["type"] == "inv"):
 				if(effect["action"] == "use"):
-					items.push_back(effect["item"])
+					#items.push_back(effect["item"])
 					#Search sa Inventory
-					for item in Main.end_game_stats["Inventory"]:
-						if(item["item"] == effect["item"]):
-							found.push_back( effect["item"] )
+					#for item in Main.end_game_stats["Inventory"]:
+					#	if(item["item"] == effect["item"]):
+					#		found.push_back( effect["item"] )
 
-		for item in found:
-			items.erase(item)
-		
+					for item in inventory_list:
+						if(item == effect["item"]):
+							#found.push_back( effect["item"] )
+							inventory_list.erase( effect["item"] )
+							break
+
+
+		#for item in found:
+		#	items.erase(item)
+
 		#print(items)
-		if(items):
-			button.disabled = true
+		#if(items):
+		#	button.disabled = true

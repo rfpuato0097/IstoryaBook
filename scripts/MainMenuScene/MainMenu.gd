@@ -1,6 +1,8 @@
 extends Control
 
 onready var info_panel = $Information
+onready var add_story_panel = $AddStoryWindow
+onready var input_story = $AddStoryWindow/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/InputStory
 
 func _ready():
 	get_tree().connect("files_dropped", self, "_on_files_dropped")
@@ -37,3 +39,12 @@ func _on_InfoButton_pressed():
 func _on_CreateStory_pressed():
 	get_tree().change_scene("res://scenes/Create.tscn")
 	pass # Replace with function body.
+
+
+func _on_AddStory_pressed():
+	add_story_panel.popup()
+
+
+func _on_ConfirmAddStory_pressed():
+	add_story_panel.hide()
+	Main.addStories([JSON.parse( input_story.text ).result])

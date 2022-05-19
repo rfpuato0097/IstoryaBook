@@ -28,6 +28,6 @@ func _ready():
 			"Inventory":
 				textbox.title = category
 				for message in Main.end_game_stats[category]:
-					textbox.content = textbox.content + message["item"] + "\n"
+					textbox.content = textbox.content + message + "\n"
 				print(Main.end_game_stats[category])
 				self.add_child(textbox)
